@@ -38,30 +38,58 @@
     }
 
     .player {
-      flex: 1; /* ocupa el espacio restante */
+      flex: 1;
       text-align: center;
     }
 
-    .player button {
-      background-color: #0066cc;
-      border: none;
-      border-radius: 50%;
-      width: 80px;
-      height: 80px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
-
     .info {
-      width: 25%; /* ahora ocupa la mitad de lo que ocupaba antes (25% del total) */
+      width: 25%;
       background-color: #fff;
       color: #000;
       padding: 20px;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* 🎠 Carrusel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 250px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 10px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel .prev {
+      left: 10px;
+    }
+
+    .carousel .next {
+      right: 10px;
     }
 
     footer {
@@ -69,6 +97,16 @@
       text-align: center;
       padding: 10px;
       color: #fff;
+    }
+
+    /* 📱 Responsivo */
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+      }
+      .info {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -80,18 +118,49 @@
   <main>
     <div class="player">
       <h2>🎶 Radio en Vivo</h2>
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8kTuG4gvrVk?utm_source=generator&theme=0" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" 
+              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8kTuG4gvrVk?utm_source=generator&theme=0" 
+              width="80%" height="352" frameBorder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"></iframe>
     </div>
 
     <div class="info">
-      <h2>Juan Camejo News</h2>
-      <p>Aquí puedes colocar noticias, mensajes de la comuna, programación cultural o comunicados importantes.</p>
-  <img src="https://github.com/juancamejoradio/juancamejoradio/blob/main/Imagen%20de%20WhatsApp%202025-10-07%20a%20las%2013.10.01_cbf95560.jpg" alt="Logo de la página" width="200">
+      <h2>Galería</h2>
+      <div class="carousel">
+        <img src="https://github.com/juancamejoradio/juancamejoradio/blob/main/Imagen%20de%20WhatsApp%202025-10-11%20a%20las%2016.15.38_bd3c6624.jpg?raw=true" class="active" alt="Imagen 1">
+        <img src="https://github.com/juancamejoradio/juancamejoradio/blob/main/Imagen%20de%20WhatsApp%202025-10-08%20a%20las%2010.50.43_7068f0a0.jpg?raw=true" alt="Imagen 2">
+        <img src="https://raw.githubusercontent.com/juancamejoradio/juancamejoradio/9619f92cd3dda9359866fd1756ed23c450e6a252/Imagen%20de%20WhatsApp%202025-10-07%20a%20las%2013.10.01_cbf95560.jpg" alt="Imagen 3">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Radio Comuna Juan Camejo</p>
   </footer>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    const prevBtn = document.querySelector('.carousel .prev');
+    const nextBtn = document.querySelector('.carousel .next');
+    let index = 0;
+
+    function showImage(i) {
+      images.forEach(img => img.classList.remove('active'));
+      images[i].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : images.length - 1;
+      showImage(index);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index < images.length - 1) ? index + 1 : 0;
+      showImage(index);
+    });
+  </script>
 </body>
 </html>
