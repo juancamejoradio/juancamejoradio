@@ -1,135 +1,111 @@
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
+/* Fuente personalizada */
+@font-face {
+  font-family: 'MinecraftiaRegular';
+  src: url('Minecraftia-Regular.ttf') format('truetype');
+}
 
-    header {
-      background-color: #003366;
-      padding: 15px;
-      text-align: left;
-    }
+/* Estilos base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'MinecraftiaRegular', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
 
-    header button {
-      background-color: #0066cc;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+/* Video de fondo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(40%);
+}
 
-    main {
-      flex: 1;
-      display: flex;
-      padding: 40px;
-      gap: 20px;
-    }
+/* Encabezado */
+header {
+  background-color: #003366;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    .player {
-      flex: 1;
-      text-align: center;
-    }
+/* Botones del header */
+header button {
+  background-color: #0066cc;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'MinecraftiaRegular';
+}
 
-    .info {
-      width: 25%;
-      background-color: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+/* Contenido principal */
+main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1rem;
+}
 
-    /* 🎠 Carrusel */
-    .carousel {
-      position: relative;
-      width: 100%;
-      max-width: 250px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
+/* Caja de información */
+.info {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  z-index: 10;
+}
 
-    .carousel img {
-      width: 100%;
-      display: none;
-      border-radius: 10px;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    .carousel button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-
-    .carousel .prev {
-      left: 10px;
-    }
-
-    .carousel .next {
-      right: 10px;
-    }
-
-    footer {
-      background-color: #003366;
-      text-align: center;
-      padding: 10px;
-      color: #fff;
-    }
-
-    /* 📱 Responsivo */
-    @media (max-width: 900px) {
-      main {
-        flex-direction: column;
-      }
-      .info {
-        width: 100%;}
-
-
-
-
+/* Carrusel */
 .carousel {
   position: relative;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 300px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .carousel-images img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta la imagen sin distorsión */
-  display: none;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 0.5s ease;
   opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .carousel-images img.active {
-  display: block;
   opacity: 1;
   z-index: 1;
 }
 
-button.prev, button.next {
+.carousel button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -138,21 +114,82 @@ button.prev, button.next {
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
 }
 
-button.prev { left: 10px; }
-button.next { right: 10px; }
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
 
-
-
-.carousel-images img {
-  transition: opacity 0.5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Caja de radio */
+.radio-box {
+  margin-left: auto;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.carousel button {
-  z-index: 2; /* Asegura que estén por encima de las imágenes */
+/* Reproductor personalizado */
+.custom-audio {
+  background-color: #121212;
+  padding: 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+#playPause {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+audio {
+  display: none;
+}
+
+/* Pie de página */
+footer {
+  background-color: #003366;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  margin-top: auto;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .carousel {
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+  }
+
+  .radio-box {
+    margin-left: 0;
+    width: 100%;
+    max-width: none;
+  }
 }

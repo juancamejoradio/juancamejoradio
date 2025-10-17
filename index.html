@@ -5,38 +5,50 @@
   <title>Radio Comuna Juan Camejo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+  <!-- Encabezado con botones -->
   <header>
-    <button>Información</button>
+    <div class="header-buttons">
+      <button id="a">Galería</button>
+      <button id="playPause">▶️</button>
+      <button id="info">Información</button>
+    </div>
+    <audio id="audioPlayer" autoplay>
+      <source src="https://stream.zeno.fm/ruyqzpd1a6tuv" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
   </header>
 
-  <main>
-    <div class="player">
-      <h2>🎶 Radio en Vivo</h2>
-      <iframe style="border-radius:12px" 
-              src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8kTuG4gvrVk?utm_source=generator&theme=0" 
-              width="80%" height="352" frameBorder="0" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-              loading="lazy"></iframe>
-    </div>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="city-at-night-katana-zero-pixel-moewalls-com.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
 
-    <div class="info">
-      <h2>Galería</h2>
-      <div class="carousel">
-          <button class="prev">⟨</button>
-          <div class="carousel-images"></div>
-          <button class="next">⟩</button>
-      </div>
+  <!-- Caja de galería -->
+  <section class="info" id="info-box">
+    <h2>Galería</h2>
+    <div class="carousel">
+      <button class="prev">⟨</button>
+      <div class="carousel-images"></div>
+      <button class="next">⟩</button>
     </div>
+  </section>
+
+  <!-- Contenido adicional -->
+  <main>
+    <h1>xd qlq</h1>
   </main>
 
+  <!-- Pie de página -->
   <footer>
     <p>&copy; 2025 Radio Comuna Juan Camejo</p>
   </footer>
 
-  <script>
-
-  </script>
+  <!-- Script -->
   <script src="script.js"></script>
+
 </body>
 </html>
