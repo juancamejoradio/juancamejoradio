@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de ejemplo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+
+<header>
+  <button onclick="location.href='#'">🏠</button>
+  <button onclick="location.href='#'">📰</button>
+  <button onclick="location.href='#'">📘</button>
+  <button id="playPause">▶️</button>
+  <button onclick="location.href='#'">🌐</button>
+  <button onclick="location.href='#'">⛑️</button>
+  <button onclick="location.href='#'">⏰</button>
+  <audio id="audioPlayer">
+      <source src="https://stream.zeno.fm/ruyqzpd1a6tuv" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
+</header>
+<video autoplay muted loop id="bg-video">
+  <source src="city-at-night-katana-zero-pixel-moewalls-com.mp4" type="video/mp4">
+  Tu navegador no soporta video HTML5.
+</video>
+  <!-- Contenido principal -->
+  <main>
+    <section id="news">
+      <h2>NEWS</h2>
+      <p>Aquí irían las noticias más recientes.</p>
+    </section>
+
+    <section id="que-somos">
+      <h2>¿QUE SOMOS?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Este espacio describe la misión, visión o propósito de la organización.</p>
+    </section>
+
+    <section id="galeria">
+      <h2>GALERIA</h2>
+      <span class="icono">📷</span>
+      <p>Aquí se mostrarán imágenes o videos.</p>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tu Organización — Todos los derechos reservados</p>
+    <div class="social">
+    </div>
+  </footer>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → ocultar con animación
+      header.style.transform = "translate(-50%, -100%)";
+      header.style.opacity = "0";
+    } else {
+      // Subiendo → mostrar con animación
+      header.style.transform = "translate(-50%, 0)";
+      header.style.opacity = "1";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → animación de salida
+      header.style.animation = "bounceUp 0.5s forwards";
+    } else {
+      // Subiendo → animación de entrada con rebote
+      header.style.animation = "bounceDown 0.6s forwards";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
