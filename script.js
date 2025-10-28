@@ -21,3 +21,5 @@ function showSlide(i) {
 
 prevBtn.addEventListener('click', () => showSlide(index - 1));
 nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+

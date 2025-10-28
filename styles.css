@@ -266,3 +266,44 @@ button:hover {
   gap: 20px;
   padding: 20px;
 }
+/* Estilo para el contenedor del logo (igual que los íconos) */
+.nav-icon {
+  background: #C87900;
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 22px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+  background: #A56505;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Estilo para la imagen del logo */
+.logo-unacom {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .nav-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .logo-unacom {
+    max-width: 70%;
+    max-height: 70%;
+  }
+}
