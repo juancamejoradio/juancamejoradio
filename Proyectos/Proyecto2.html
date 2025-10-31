@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Camejo Radio | PROYECTO N°2</title>
+  <link rel="stylesheet" href="../estilos/styles-proyects.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+
+<header>
+
+  <a href="../index.html" title="Inicio" aria-label="Inicio">🏚️</a>
+  <a href="../Noticias.html" title="Noticias" aria-label="Noticias">🗞️</a>
+  <a href="../Historia.html" title="Historia" aria-label="Historia">📘</a>
+  <a href="../Proyectos.html" title="Proyectos" aria-label="Proyectos">📂</a>
+  <button id="playPause" title="Reproducir/Pausar radio" aria-label="Reproducir o pausar radio">▶️</button>
+  <a href="../Redes-Sociales.html" title="Redes Sociales" aria-label="Redes Sociales">🌐</a>
+  <a href="../Ayuda.html" title="Ayuda" aria-label="Ayuda">⛑️</a>
+  <a href="../Horario.html" title="Horario" aria-label="Horario">⌛</a>
+  <a href="../UNACOM.html" title="UNACOM" aria-label="UNACOM" class="nav-icon"><img src="../imagenes-pagina/logo.png" alt="Logo UNACOM" class="logo-unacom"></a>
+
+  <audio id="audioPlayer">
+      <source src="https://stream.zeno.fm/ruyqzpd1a6tuv" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
+</header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="que-somos">
+      <h2>Proyecto N°2</h2>
+<p></p>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Juan Camejo — Todos los derechos reservados</p>
+    <div class="social">
+    </div>
+  </footer>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → ocultar con animación
+      header.style.transform = "translate(-50%, -100%)";
+      header.style.opacity = "0";
+    } else {
+      // Subiendo → mostrar con animación
+      header.style.transform = "translate(-50%, 0)";
+      header.style.opacity = "1";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → animación de salida
+      header.style.animation = "bounceUp 0.5s forwards";
+    } else {
+      // Subiendo → animación de entrada con rebote
+      header.style.animation = "bounceDown 0.6s forwards";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
