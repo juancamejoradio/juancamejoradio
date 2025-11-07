@@ -174,7 +174,7 @@ footer .social a:hover {
 
   footer {
     font-size: 12px;
-    padding: 15px 5px;
+    padding: 5px;
   }
 }
 html, body {
@@ -306,6 +306,37 @@ button:hover {
     max-width: 70%;
     max-height: 70%;
   }
+}
+
+footer {
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textofoter{
+  flex: 1;
+  text-align: center;
+}
+
+.square-button {
+  width: 50px;
+  height: 50px;
+  background: #C87900;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.square-button:hover {
+  background-color: #A56505;
 }
 
 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Camejo Radio | Agradecimientos</title>
+  <link rel="stylesheet" href="estilos/styles-proyects.css">
+ <style> @font-face {
+  font-family: 'Minecraftia-Regular';
+  src: url('Minecraftia-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Minecraftia-Regular', sans-serif;
+}</style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+
+<header>
+
+ <a href="index.html" title="Inicio" aria-label="Inicio">🏚️</a>
+  <a href="Noticias.html" title="Noticias" aria-label="Noticias">🗞️</a>
+  <a href="Botonera-Informativa.html" title="Botonera Informativa" aria-label="Botonera Informativa">📘</a>
+  <button id="playPause" title="Reproducir/Pausar radio" aria-label="Reproducir o pausar radio">▶️</button>
+  <a href="Redes-Sociales.html" title="Redes Sociales" aria-label="Redes Sociales">🌐</a>
+  <a href="Juventud.html" title="Juventud" aria-label="Juventud">😊</a>
+  <a href="Horario.html" title="Horario" aria-label="Horario">⌛</a>
+
+
+  <audio id="audioPlayer">
+      <source src="https://stream.zeno.fm/ruyqzpd1a6tuv" type="audio/mpeg">
+      Tu navegador no soporta el elemento de audio.
+  </audio>
+</header>
+
+  <!-- Contenido principal -->
+  <main>
+    <section id="que-somos">
+      <h2>AGRADECIMIENTOS</h2>
+<p>
+Haber creado esta radio es un honor, a pesar de que la mayoria lo hizo la IA, trate de poner el maximo esfuerzo en esto poniendo un poco de mi parte con lo poco que se, y he de aclarar que esto no habría sido posible sin el apoyo incondicional de mis amigos, en especial el apoyo de fonso, amigo los consejos que me diste fueron de mucha ayuda, tambien hago mencion especial a lushi y dat personas que me mantuvieron me dieron sus mas humildes opiniones, los quiero demaciado. a mi mamá, quien me apoyo en todo lo que nesesitaba ademas de que me dio consejos con respecto a la apariencia de la radio, la verdad me diste una ayuda imprecionante. pero la creacion de mi primera pagin a web se la quiero dedicar a dos personas en especifico, a Ana Isabel y Juan Manuel, abuelos donde quira que esten quiero decirles que esto es por ustedes y que los extraño, espero que desde el cielo me vean y se sientan orgullosos de lo lejos que he llegado.<br><br>
+
+Ademas quiero hacer una mención especial a dos cosas que me apoyaron en mis momentos más difíciles, cuando me sentía desorientado y sin fuerzas ya cansado de que no mucha gente se interesara en esto: la música y los videojuegos.juegos como stardew valley, the legend of zelda breath of the wild, minecraft y Artistas como Paulo Londra, Duki, Trueno, Milo J, Tiago PZK, Lit Killah y la banda Morat, me brindaron una ayuda increíble. Me ayudaron a centrarme, a no pensar que todo esta perdido a darle color a esta creación, desde el fondo de mi corazon GRACIAS. <br><br>
+
+Bueno sin nada mas que decir Quiero compartirles un discurso del cantante Mauro Ezequiel Lombardo, alias Duki:<br><br>
+
+La tristeza no es un momento feo, no es un sentimiento feo. Sí, nos duele, pero la tristeza nos hace fuerte, no está mal sentirse triste.<br>
+
+
+El otro día me levanté de la conferencia triste porque estaba angustiado y había gente que comentaba ‘uy este pibe es multimillonario, no le falta nada...’. No importa cuánta plata tengo, lo que importa es cómo te sentís por adentro. Si estás triste, hablalo, contalo, decíselo a la gente, no tengan miedo a estar tristes.<br>
+
+Estar triste es lo que me hace fuerte. Yo soy hombre, lloro desde que nací y viví triste toda mi vida y gracias a eso me hice fuerte, así que toda la gente que piensa que llorar y estar triste está mal, son todos unos c***nes. y no tienen h****s. Yo lloro, yo estoy triste, me la banco y salgo adelante, así de simple.<br>
+
+
+Si tienen problemas de ansiedad, problemas mentales, la mejor forma es salir adelante. La vida es hermosa, te lo juro, a veces parece difícil. Hay gente que la tiene más difícil que los demás y es la verdad, pero esas cosas te hacen fuerte. Si la peleás, el mérito va a ser doble. Si tienen un sueño, algo que les gusta, peleen por eso.<br>
+
+
+Si tienen que llorar, lloren. Si tienen que estar tristes, lo dicen. Y si alguien les dice ‘c***n’, le decís ‘c***n sos vos por no querer mostrarlo, gil’<br><br><br>
+<br>
+
+
+
+Y para terminar unas palabras del cantante Paulo Londra,<br><br>
+"a pesar de cualquier cosa hay que esta bien<br>
+hay que ver el vaso medio lleno<br>
+¿o no? ¿o me equivoco?<br>
+porque seguro que todos tenemos razones para sentirnos mal<br>
+pero seguro tenemos alguna por lo menos alguna para sentirnos bien<br>
+por qué no sentirse bien ¿no?<br>
+sonrreir aunque cueste<br>
+esa la tire yo <br>
+sonreir aunque cueste<br>
+por qué no cuesta nada."<br><br>
+Sin nada mas que decir buenos dias buenas tardes y buenas noches.</p>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Juan Camejo — Todos los derechos reservados</p>
+    <div class="social">
+    </div>
+  </footer>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → ocultar con animación
+      header.style.transform = "translate(-50%, -100%)";
+      header.style.opacity = "0";
+    } else {
+      // Subiendo → mostrar con animación
+      header.style.transform = "translate(-50%, 0)";
+      header.style.opacity = "1";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll) {
+      // Bajando → animación de salida
+      header.style.animation = "bounceUp 0.5s forwards";
+    } else {
+      // Subiendo → animación de entrada con rebote
+      header.style.animation = "bounceDown 0.6s forwards";
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

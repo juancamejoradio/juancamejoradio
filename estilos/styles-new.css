@@ -279,3 +279,29 @@ button:hover {
     max-height: 70%;
   }
 }
+
+.boton-section {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FBFAFA;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40%;
+  height: 7%;
+  font-size: 100%
+}
+
+.boton-section:hover {
+  background-color: #E8E8E8;
+}
+  .logo-unacom {
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+
